@@ -1,0 +1,35 @@
+<ons-page id="home">
+    <ons-toolbar>
+        <div class="center">Buscar Viajes</div>
+    </ons-toolbar>
+     
+	 
+	<div class="w3-panel  ">
+	<div class="w3-card-2 w3-padding w3-white ">
+    <!-- Input para seleccionar el origen -->
+    <ons-select class="w3-select" id="origenSelect" >
+        <option value="" selected disabled>Selecciona el origen</option>
+        <!-- Opciones de origenes (se pueden llenar dinámicamente) -->
+        <option value="Ocotal">Ocotal</option>
+        <option value="Managua">Managua</option>
+    </ons-select>
+	
+    <!-- Input para seleccionar el destino -->
+    <ons-select class="w3-select" id="destinoSelect" >
+        <option value="" selected disabled>Selecciona el destino</option>
+        <!-- Opciones de destinos (se pueden llenar dinámicamente) -->
+        <option value="Ocotal">Ocotal</option>
+        <option value="Managua">Managua</option>
+    </ons-select>
+
+    <!-- Botón de búsqueda -->
+      <ons-button modifier="large" class="search-button" onclick="buscarRegistros()">Buscar</ons-button>
+	
+	
+	</div>
+	</div>
+
+
+    <!-- Lista de resultados -->
+    <ons-list id="listaRegistrosHome"></ons-list>
+</ons-page>

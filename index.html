@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte Nicaragua</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script
+      type="text/javascript"
+      src="https://npmcdn.com/parse/dist/parse.min.js"
+    ></script>
+</head>
+<body>
+
+
+  
+
+
+<ons-tabbar position="bottom">
+    <ons-tab page="home.html" icon="md-home" active></ons-tab>
+    <ons-tab  page="registro.html" icon="md-book"> </ons-tab>
+   
+</ons-tabbar>
+
+
+
+
+<script>
+    document.addEventListener('init', function(event) {
+        var page = event.target;
+
+        if (page.id === 'home.html') {
+            // Aquí puedes agregar lógica específica para la página de inicio
+        } else if (page.id === 'registro.html') {
+            // Aquí puedes agregar lógica específica para la página de registro
+        }
+    });
+</script>
+
+<script src="js/registro.js"></script>
+
+<script src="js/buscador.js"></script>
+
+
+</body>
+</html>
