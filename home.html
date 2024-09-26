@@ -1,35 +1,46 @@
 <ons-page id="home">
     <ons-toolbar>
-        <div class="center">Buscar Viajes</div>
+        <div class="center">
+            <i class="fa fa-search-location"></i> Buscar Viajes
+        </div>
     </ons-toolbar>
-     
-	 
-	<div class="w3-panel  ">
-	<div class="w3-card-2 w3-padding w3-white ">
-    <!-- Input para seleccionar el origen -->
-    <ons-select class="w3-select" id="origenSelect" >
-        <option value="" selected disabled>Selecciona el origen</option>
-        <!-- Opciones de origenes (se pueden llenar dinámicamente) -->
-        <option value="Ocotal">Ocotal</option>
-        <option value="Managua">Managua</option>
-    </ons-select>
-	
-    <!-- Input para seleccionar el destino -->
-    <ons-select class="w3-select" id="destinoSelect" >
-        <option value="" selected disabled>Selecciona el destino</option>
-        <!-- Opciones de destinos (se pueden llenar dinámicamente) -->
-        <option value="Ocotal">Ocotal</option>
-        <option value="Managua">Managua</option>
-    </ons-select>
 
-    <!-- Botón de búsqueda -->
-      <ons-button modifier="large" class="search-button" onclick="buscarRegistros()">Buscar</ons-button>
-	
-	
-	</div>
-	</div>
+    <div class="w3-panel">
+        <div class="w3-card-2 w3-padding w3-white">
+            <!-- Input para seleccionar el origen -->
+            <label for="origenSelect">
+                <i class="fa fa-map-marker-alt"></i> Origen
+            </label>
+            <ons-select class="w3-select" id="origenSelect">
+                <option value="" selected disabled>Selecciona el origen</option>
+                <option value="Ocotal">Ocotal</option>
+                <option value="Managua">Managua</option>
+            </ons-select>
 
+            <!-- Input para seleccionar el destino -->
+            <label for="destinoSelect">
+                <i class="fa fa-route"></i> Destino
+            </label>
+            <ons-select class="w3-select" id="destinoSelect">
+                <option value="" selected disabled>Selecciona el destino</option>
+                <option value="Ocotal">Ocotal</option>
+                <option value="Managua">Managua</option>
+            </ons-select>
+
+            <!-- Botón de búsqueda -->
+            <ons-button modifier="large" class="search-button" onclick="buscarRegistros()">
+                <i class="fa fa-search"></i> Buscar
+            </ons-button>
+        </div>
+    </div>
 
     <!-- Lista de resultados -->
     <ons-list id="listaRegistrosHome"></ons-list>
+
+    <!-- Paginación -->
+    <div style="text-align: center; margin-top: 20px;">
+        <ons-button id="prevButton" onclick="cambiarPagina(-1)">Anterior</ons-button>
+        <span id="paginaActual">1</span>
+        <ons-button id="nextButton" onclick="cambiarPagina(1)">Siguiente</ons-button>
+    </div>
 </ons-page>
