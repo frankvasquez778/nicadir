@@ -1,45 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transporte Nicaragua</title>
-    
+
     <!-- W3.CSS -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
-    <!-- Onsen UI -->
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    
+
     <!-- Parse -->
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
+    <style>
+        .w3-card {
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        /* Ocultar todas las secciones de contenido por defecto */
+        .tab-content {
+            display: none;
+        }
+
+        /* Mostrar la sección activa */
+        .active {
+            display: block;
+        }
+
+        .search-button {
+            display: block;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<ons-tabbar position="bottom">
-    <ons-tab page="home.html" icon="md-home" active></ons-tab>
-    <ons-tab page="registro.html" icon="md-book"></ons-tab>
-</ons-tabbar>
+<header class="w3-container w3-blue">
+    <h1>Transporte Nicaragua</h1>
+</header>
+
+<!-- Contenido principal -->
+<div class="w3-container w3-padding">
+    <!-- Pestaña Transporte -->
+    <div id="transporte" class="w3-container w3-card tab-content active">
+        <h2>Búsqueda de Transporte</h2>
+
+        <label for="origenSelect">
+            <i class="fa fa-map-marker-alt"></i> Origen
+        </label>
+        <select class="w3-select" id="origenSelect">
+            <option value="" selected disabled>Selecciona el origen</option>
+            <option value="Ocotal">Ocotal</option>
+            <option value="Managua">Managua</option>
+        </select>
+
+        <label for="destinoSelect">
+            <i class="fa fa-route"></i> Destino
+        </label>
+        <select class="w3-select" id="destinoSelect">
+            <option value="" selected disabled>Selecciona el destino</option>
+            <option value="Ocotal">Ocotal</option>
+            <option value="Managua">Managua</option>
+        </select>
+         <br>
+         <br>
+        <button class="w3-button w3-blue search-button" onclick="buscarRegistros()">
+            <i class="fa fa-search"></i> Buscar Transporte
+        </button>
+         <div class="w3-border w3-panel">
+        <ul id="listaRegistrosHome" class="w3-ul"></ul>
+         </div>
+        <!-- Controles de paginación -->
+        <div class="w3-bar">
+            <button id="prevButton" class="w3-button  w3-left" onclick="cambiarPagina(-1)">Anterior</button>
+            <span class="w3-bar-item"><span id="paginaActual"></span></span>
+            <button id="nextButton" class="w3-button  w3-right" onclick="cambiarPagina(1)">Siguiente</button>
+        </div>
+    </div>
+
+    <!-- Pestaña Locales -->
+    <div id="locales" class="w3-container w3-card tab-content">
+        <h2>Búsqueda de Locales</h2>
+
+        <label for="ciudadSelect">
+            <i class="fa fa-map-marker-alt"></i> Ciudad
+        </label>
+        <select class="w3-select" id="ciudadSelect">
+            <option value="" selected disabled>Selecciona la ciudad</option>
+            <option value="Ocotal">Ocotal</option>
+            <option value="Managua">Managua</option>
+        </select>
+
+        <label for="tipoLocalSelect">
+            <i class="fa fa-building"></i> Tipo de Local
+        </label>
+        <select class="w3-select" id="tipoLocalSelect">
+            <option value="" selected disabled>Selecciona el tipo de local</option>
+            <option value="Hotel">Hotel</option>
+            <option value="Centro Turístico">Centro Turístico</option>
+        </select>
+
+        <button class="w3-button w3-blue search-button" onclick="buscarLocales()">
+            <i class="fa fa-search"></i> Buscar Locales
+        </button>
+
+        <ul id="listaRegistrosLocales" class="w3-ul"></ul>
+    </div>
+</div>
+
+<!-- Barra de navegación en la parte inferior -->
+<div class="w3-bar w3-blue w3-bottom">
+    <button class="w3-bar-item w3-button w3-hover-light-blue" onclick="openTab('transporte')">
+        <i class="fa fa-bus"></i> Transportes
+    </button>
+    <button class="w3-bar-item w3-button w3-hover-light-blue" onclick="openTab('locales')">
+        <i class="fa fa-building"></i> Locales
+    </button>
+</div>
 
 <script>
-    document.addEventListener('init', function(event) {
-        var page = event.target;
+    // Función para mostrar la pestaña seleccionada
+    function openTab(tabName) {
+        var i, tabContent;
 
-        if (page.id === 'home.html') {
-            // Aquí puedes agregar lógica específica para la página de inicio
-        } else if (page.id === 'registro.html') {
-            // Aquí puedes agregar lógica específica para la página de registro
+        // Ocultar todas las secciones
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
         }
-    });
+
+        // Mostrar la pestaña seleccionada
+        document.getElementById(tabName).classList.add("active");
+    }
+
+    // Función para realizar la búsqueda de locales (a implementar)
+    function buscarLocales() {
+        // Lógica para buscar locales
+    }
 </script>
 
-<script src="js/registro.js"></script>
-<script src="js/buscador.js"></script>
+<!-- Incluir el script buscarTransportes.js -->
+<script src="js/buscarTransportes.js"></script>
 
 </body>
 </html>
