@@ -1,46 +1,45 @@
-<ons-page id="home">
-    <ons-toolbar>
-        <div class="center">
-            <i class="fa fa-search-location"></i> Buscar Viajes
-        </div>
-    </ons-toolbar>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte Nicaragua</title>
+    
+    <!-- W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!-- Onsen UI -->
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    
+    <!-- Parse -->
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-    <div class="w3-panel">
-        <div class="w3-card-2 w3-padding w3-white">
-            <!-- Input para seleccionar el origen -->
-            <label for="origenSelect">
-                <i class="fa fa-map-marker-alt"></i> Origen
-            </label>
-            <ons-select class="w3-select" id="origenSelect">
-                <option value="" selected disabled>Selecciona el origen</option>
-                <option value="Ocotal">Ocotal</option>
-                <option value="Managua">Managua</option>
-            </ons-select>
+<ons-tabbar>
+    <ons-tab page="home.html" label="Inicio" icon="md-home"></ons-tab>
+    <ons-tab page="hoteles.html" label="Hoteles" icon="md-hotel"></ons-tab>
+</ons-tabbar>
 
-            <!-- Input para seleccionar el destino -->
-            <label for="destinoSelect">
-                <i class="fa fa-route"></i> Destino
-            </label>
-            <ons-select class="w3-select" id="destinoSelect">
-                <option value="" selected disabled>Selecciona el destino</option>
-                <option value="Ocotal">Ocotal</option>
-                <option value="Managua">Managua</option>
-            </ons-select>
+<script>
+    document.addEventListener('init', function(event) {
+        var page = event.target;
 
-            <!-- Botón de búsqueda -->
-            <ons-button modifier="large" class="search-button" onclick="buscarRegistros()">
-                <i class="fa fa-search"></i> Buscar
-            </ons-button>
-        </div>
-    </div>
+        if (page.id === 'home') {
+            // Lógica específica para la página de inicio
+        } else if (page.id === 'hoteles') {
+            // Lógica específica para la página de hoteles
+        }
+    });
+</script>
 
-    <!-- Lista de resultados -->
-    <ons-list id="listaRegistrosHome"></ons-list>
+<script src="js/auth.js"></script>
+<script src="js/registro.js"></script>
+<script src="js/buscador.js"></script>
 
-    <!-- Paginación -->
-    <div style="text-align: center; margin-top: 20px;">
-        <ons-button id="prevButton" onclick="cambiarPagina(-1)">Anterior</ons-button>
-        <span id="paginaActual">1</span>
-        <ons-button id="nextButton" onclick="cambiarPagina(1)">Siguiente</ons-button>
-    </div>
-</ons-page>
+</body>
+</html>

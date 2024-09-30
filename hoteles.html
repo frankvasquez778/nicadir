@@ -1,0 +1,52 @@
+<ons-page id="hoteles">
+    <ons-toolbar>
+        <div class="center">
+            <i class="fa fa-hotel"></i> Buscar Hoteles
+        </div>
+    </ons-toolbar>
+
+    <div class="w3-panel">
+        <div class="w3-card-2 w3-padding w3-white">
+            <!-- Input para seleccionar el departamento -->
+            <label for="departamentoSelect">
+                <i class="fa fa-map-marker-alt"></i> Departamento
+            </label>
+            <ons-select class="w3-select" id="departamentoSelect">
+                <option value="" selected disabled>Selecciona el departamento</option>
+                <option value="Managua">Managua</option>
+                <option value="Leon">León</option>
+                <option value="Granada">Granada</option>
+                <option value="Chinandega">Chinandega</option>
+                <!-- Puedes agregar más opciones aquí -->
+            </ons-select>
+
+            <!-- Input para seleccionar la ciudad -->
+            <label for="ciudadSelect">
+                <i class="fa fa-map-marker"></i> Ciudad
+            </label>
+            <ons-select class="w3-select" id="ciudadSelect">
+                <option value="" selected disabled>Selecciona la ciudad</option>
+                <option value="Ocotal">Ocotal</option>
+                <option value="Managua">Managua</option>
+                <option value="Leon">León</option>
+                <option value="Granada">Granada</option>
+                <!-- Puedes agregar más opciones aquí -->
+            </ons-select>
+
+            <!-- Botón de búsqueda -->
+            <ons-button modifier="large" class="search-button" onclick="buscarHoteles()">
+                <i class="fa fa-search"></i> Buscar
+            </ons-button>
+        </div>
+    </div>
+
+    <!-- Lista de resultados -->
+    <ons-list id="listaRegistrosHoteles"></ons-list>
+
+    <!-- Paginación -->
+    <div style="text-align: center; margin-top: 20px;">
+        <ons-button id="prevButtonHoteles" onclick="cambiarPaginaHoteles(-1)">Anterior</ons-button>
+        <span id="paginaActualHoteles">1</span>
+        <ons-button id="nextButtonHoteles" onclick="cambiarPaginaHoteles(1)">Siguiente</ons-button>
+    </div>
+</ons-page>
