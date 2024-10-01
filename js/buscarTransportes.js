@@ -55,11 +55,12 @@ function mostrarResultados() {
     } else {
         registrosAMostrar.forEach((registro) => {
             const nombre = registro.get("nombre");
-            const ciudad = registro.get("ciudad");
+            const origen = registro.get("origen");
+			const destino = registro.get("destino");
             const telefono = registro.get("telefono");
             const categoria = registro.get("categoria");
-            const descripcion = registro.get("descripcion");
-            const entrada = registro.get("entrada");
+           // const descripcion = registro.get("descripcion");
+            const llegada = registro.get("llegada");
             const salida = registro.get("salida");
 
             // Crear elemento <ons-card> para mostrar los datos del registro
@@ -71,12 +72,13 @@ function mostrarResultados() {
             contenidoCard.className = "card-content";
             contenidoCard.innerHTML = `
                 <h2>${nombre}</h2>
-                <p>Ciudad: ${ciudad}</p>
+                <p>Origen: ${origen}</p>
+				<p>Destino: ${destino}</p>
                 <p>Teléfono: ${telefono}</p>
                 <p>Categoría: ${categoria}</p>
-                <p>Descripción: ${descripcion}</p>
-                <p>Entrada: ${entrada}</p>
                 <p>Salida: ${salida}</p>
+                <p>LLegada: ${llegada}</p>
+                
             `;
 
             // Agregar el contenido al <ons-card>
