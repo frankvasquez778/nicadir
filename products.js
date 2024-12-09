@@ -3,7 +3,7 @@ const products = [
     {
         id: 'product1',
         name: 'Camisa Personalizada',
-        price: 'Desde $15.00',
+        price: 'Desde C$150.00',
         description: 'Camisas únicas con diseños personalizados, perfectas para cualquier ocasión.',
         image: 'images/product1.png',
         icon: 'fas fa-tshirt'
@@ -11,7 +11,7 @@ const products = [
     {
         id: 'product2',
         name: 'Taza Sublimada',
-        price: 'Desde $8.00',
+        price: 'Desde C$140.00',
         description: 'Tazas personalizadas con fotos y diseños únicos.',
         image: 'images/product2.png',
         icon: 'fas fa-mug-hot'
