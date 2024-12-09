@@ -4,7 +4,7 @@ const products = [
         id: 'product1',
         name: 'Camisa Personalizada',
         price: 'Desde C$150.00',
-        description: 'Camisas únicas con diseños personalizados, perfectas para cualquier ocasión.',
+        description: 'Camisas de la Virgen María para la Purísima en Nicaragua .',
         image: 'images/product1.png',
         icon: 'fas fa-tshirt'
     },
