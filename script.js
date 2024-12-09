@@ -21,7 +21,7 @@ function renderProducts() {
                 <img src="${product.image}" alt="${product.name}" class="w3-img">
                 <div class="product-content">
                     <h3>${product.name}</h3>
-                    <h4 class="w3-text-red">${product.price}</h4>
+                    <h4>${product.price}</h4>
                     <i class="${product.icon} product-icon"></i>
                 </div>
             </div>
