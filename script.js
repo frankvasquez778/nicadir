@@ -1,5 +1,5 @@
 // Variables para la paginación
-const itemsPerPage = 5; // Número de productos por página
+const itemsPerPage = 10; // Número de productos por página
 let currentPage = 1;
 
 // Renderizar los productos en la página actual
@@ -21,7 +21,7 @@ function renderProducts() {
                 <img src="${product.image}" alt="${product.name}" class="w3-img">
                 <div class="product-content">
                     <h3>${product.name}</h3>
-                    <h4>${product.price}</h4>
+                    <p>${product.price}</p>
                     <i class="${product.icon} product-icon"></i>
                 </div>
             </div>
@@ -37,19 +37,30 @@ function renderProducts() {
 function showProductDetails(productId) {
     const product = products.find(p => p.id === productId);
     if (product) {
+        // Actualiza el historial del navegador
         history.pushState({ productId }, '', `#${productId}`);
 
+        // Oculta la vista principal y muestra los detalles
         document.getElementById('main-content').classList.add('w3-hide');
         document.getElementById('product-details').classList.remove('w3-hide');
+
+        // Generar enlace de WhatsApp
+        const whatsappMessage = `Hola, estoy interesado en este producto: ${product.name} (${product.price}). Aquí está el enlace: ${window.location.href}`;
+        const whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+
+        // Mostrar detalles del producto
         document.getElementById('details-content').innerHTML = `
             <div class="w3-center">
                 <img src="${product.image}" alt="${product.name}" class="w3-img" style="max-width:300px; border-radius:8px;">
                 <h2>${product.name} <i class="${product.icon}"></i></h2>
                 <p><strong>${product.price}</strong></p>
                 <p>${product.description}</p>
-            </div>
-            <div class="w3-center">
-                <button class="w3-button w3-light-grey w3-margin-top" onclick="goBack()">Atrás</button>
+                <div class="w3-center">
+                    <a href="${whatsappLink}" target="_blank" class="w3-button w3-green w3-margin-top">
+                        <i class="fab fa-whatsapp"></i> Compartir en WhatsApp
+                    </a>
+                    <button class="w3-button w3-light-grey w3-margin-top" onclick="goBack()">Atrás</button>
+                </div>
             </div>
         `;
     }
