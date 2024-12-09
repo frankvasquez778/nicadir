@@ -2,7 +2,7 @@
 const products = [
     {
         id: 'product1',
-        name: 'Camisa Personalizada',
+        name: 'Camisas de la Virgen María Nicaragua',
         price: 'Desde C$150.00',
         description: 'Camisas de la Virgen María para la Purísima en Nicaragua. Se le puede agregar el nombre familiar en la parte trasera de la camisa.',
         image: 'images/product1.png',
