@@ -22,7 +22,7 @@ const products = [
     {
         id: 'product3',
         name: 'Camiseta de la Virgen de Guadalupe',
-        price: 'Desde C$100.00',
+        price: 'Desde C$150.00',
         description: 'Camiseta de la Virgen de Guadalupe Personalizada con el nombre o apellido famliar.',
         image: 'img/product4.png',
         icon: 'fa fa-tshirt',
