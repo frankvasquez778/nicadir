@@ -13,7 +13,7 @@ const products = [
         id: 'product2',
         name: 'Camisetas Navideñas de Sonic para niños',
         price: 'Desde C$140.00',
-        description: 'Camiseta navideña de Sonic para niños desde 0 meses a talla L',
+        description: 'Camiseta navideña de Sonic para niños desde 0 meses a talla XL',
         image: 'img/product2.png',
         icon: 'fas fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'],
@@ -23,10 +23,10 @@ const products = [
         id: 'product3',
         name: 'Camiseta de la Virgen de Guadalupe',
         price: 'Desde C$100.00',
-        description: 'Taza de cerámica personalizada con la foto o diseño que desees. Ideal para regalos.',
-        image: 'img/product3.png',
-        icon: 'fas fa-mug-hot',
-        sizes: [], // No aplica para tazas
+        description: 'Camiseta de la Virgen de Guadalupe Personalizada con el nombre o apellido famliar.',
+        image: 'img/product4.png',
+        icon: 'fa fa-tshirt',
+        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tazas
         category: 'Camisetas'
     },
     {
