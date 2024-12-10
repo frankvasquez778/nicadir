@@ -27,7 +27,7 @@ const products = [
         image: 'img/product3.png',
         icon: 'fas fa-mug-hot',
         sizes: [], // No aplica para tazas
-        category: 'Tazas'
+        category: 'Camisetas'
     },
     {
         id: 'product4',
