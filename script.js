@@ -59,7 +59,7 @@ function showProductDetails(productId) {
                     <a href="${whatsappLink}" target="_blank" class="w3-button w3-green w3-margin-top">
                         <i class="fab fa-whatsapp"></i> Compartir en WhatsApp
                     </a>
-                    <button class="w3-button w3-light-grey w3-margin-top" onclick="goBack()">Atrás</button>
+                    
                 </div>
             </div>
         `;
