@@ -2,9 +2,9 @@
 const products = [
     {
         id: 'product1',
-        name: 'Camisas de la Virgen María Nicaragua',
+        name: 'Camiseta de la Virgen María Nicaragua',
         price: 'Desde C$150.00',
-        description: 'Camisas de la Virgen María para la Purísima en Nicaragua. Se le puede agregar el nombre familiar en la parte trasera de la camisa.',
+        description: 'Camiseta de la Virgen María para la Purísima en Nicaragua. Se le puede agregar el nombre familiar en la parte trasera de la camisa.',
         image: 'images/product1.png',
         icon: 'fas fa-tshirt'
     },
@@ -18,11 +18,11 @@ const products = [
     },
     {
         id: 'product3',
-        name: 'Cojín Decorativo',
+        name: 'Camiseta de la Virgen de Guadalupe',
         price: 'Desde $12.00',
-        description: 'Cojines decorativos sublimados, ideales para regalos.',
+        description: 'Camiseta de la de la Virgen de Guadalupe personalizada con el nombre o apellido familiar.',
         image: 'images/product3.png',
-        icon: 'fas fa-couch'
+        icon: 'fas fa-tshirt'
     },
     // Agrega más productos aquí
 	 {
