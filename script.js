@@ -3,14 +3,14 @@ const itemsPerPage = 10; // Número de productos por página
 let currentPage = 1;
 
 // Renderizar los productos en la página actual
-function renderProducts() {
+function renderProducts(filteredProducts = products) {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
 
     // Calcular los índices de los productos que se mostrarán
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const productsToShow = products.slice(startIndex, endIndex);
+    const productsToShow = filteredProducts.slice(startIndex, endIndex);
 
     // Renderizar los productos en la página actual
     productsToShow.forEach(product => {
@@ -22,6 +22,7 @@ function renderProducts() {
                 <div class="product-content">
                     <h3>${product.name}</h3>
                     <p>${product.price}</p>
+                    <p><strong>Tallas disponibles:</strong> ${product.sizes.join(', ')}</p>
                     <i class="${product.icon} product-icon"></i>
                 </div>
             </div>
@@ -30,7 +31,7 @@ function renderProducts() {
     });
 
     // Renderizar la paginación
-    renderPagination();
+    renderPagination(filteredProducts);
 }
 
 // Mostrar detalles del producto
@@ -55,11 +56,11 @@ function showProductDetails(productId) {
                 <h2>${product.name} <i class="${product.icon}"></i></h2>
                 <p><strong>${product.price}</strong></p>
                 <p>${product.description}</p>
+                <p><strong>Tallas disponibles:</strong> ${product.sizes.join(', ')}</p>
                 <div class="w3-center">
                     <a href="${whatsappLink}" target="_blank" class="w3-button w3-green w3-margin-top">
                         <i class="fab fa-whatsapp"></i> Compartir en WhatsApp
                     </a>
-                    
                 </div>
             </div>
         `;
@@ -76,11 +77,11 @@ window.addEventListener('popstate', (event) => {
 });
 
 // Renderizar la paginación
-function renderPagination() {
+function renderPagination(filteredProducts = products) {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
 
-    const totalPages = Math.ceil(products.length / itemsPerPage);
+    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
@@ -89,10 +90,17 @@ function renderPagination() {
         button.className = 'w3-button w3-light-grey w3-margin-right';
         button.onclick = () => {
             currentPage = i;
-            renderProducts();
+            renderProducts(filteredProducts.slice((i - 1) * itemsPerPage, i * itemsPerPage));
         };
         pagination.appendChild(button);
     }
+}
+
+// Filtrar productos por categoría
+function filterProducts(category) {
+    const filteredProducts = category === 'All' ? products : products.filter(product => product.category === category);
+    currentPage = 1; // Reiniciar a la primera página
+    renderProducts(filteredProducts);
 }
 
 // Regresar a la vista principal
