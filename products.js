@@ -21,7 +21,7 @@ const products = [
     },
     {
         id: 'product3',
-        name: 'Taza Personalizada con Foto',
+        name: 'Camiseta de la Virgen de Guadalupe',
         price: 'Desde C$100.00',
         description: 'Taza de cerámica personalizada con la foto o diseño que desees. Ideal para regalos.',
         image: 'img/product3.png',
