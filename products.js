@@ -4,7 +4,7 @@ const products = [
         name: 'Camiseta de la Virgen María Nicaragua',
         price: 'Desde C$150.00',
         description: 'Camiseta de la Virgen María para la Purísima en Nicaragua. Se le puede agregar el nombre familiar en la parte trasera de la camisa.',
-        image: 'img/product1.png',
+        image: 'img/product1.webp',
         icon: 'fas fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'],
         category: 'Camisetas'
@@ -14,7 +14,7 @@ const products = [
         name: 'Camisetas Navideñas de Sonic para niños',
         price: 'Desde C$140.00',
         description: 'Camiseta navideña de Sonic para niños desde 0 meses a talla XL',
-        image: 'img/product2.png',
+        image: 'img/product2.webp',
         icon: 'fas fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'],
         category: 'Camisetas'
@@ -24,7 +24,7 @@ const products = [
         name: 'Camiseta de la Virgen de Guadalupe para niños y adultos',
         price: 'Desde C$150.00',
         description: 'Camiseta de la Virgen de Guadalupe Personalizada con el nombre o apellido famliar.',
-        image: 'img/product4.png',
+        image: 'img/product4.webp',
         icon: 'fa fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tazas
         category: 'Camisetas'
@@ -34,7 +34,7 @@ const products = [
         name: 'Tarjeta de Invitación de Boda',
         price: 'Desde C$50.00',
         description: 'Hermosa tarjeta de invitación para bodas, totalmente personalizable con tus detalles.',
-        image: 'img/product1.png',
+        image: 'img/product1.webp',
         icon: 'fas fa-envelope',
         sizes: [], // No aplica para tarjetas
         category: 'Tarjetas'
