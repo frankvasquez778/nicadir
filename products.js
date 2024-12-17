@@ -41,13 +41,13 @@ const products = [
     },
     {
         id: 'product5',
-        name: 'Bolsa de Regalo Navideña',
-        price: 'Desde C$70.00',
-        description: 'Bolsa de regalo con diseños navideños, ideal para tus obsequios de fin de año.',
+        name: 'Camiseta de Conjunto Familiar. I LOVE MY FAMILY',
+        price: 'Desde C$150.00',
+        description: 'Camiseta Personalizada I LOVE MY FAMILY con el nombre o apellido famliar.',
         image: 'img/product5.png',
-        icon: 'fas fa-gift',
-        sizes: [], // No aplica para bolsas
-        category: 'Bolsas de Regalo'
+        icon: 'fas fa-tshirt',
+        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para bolsas
+        category: 'Camisetas'
     },
     {
         id: 'product6',
