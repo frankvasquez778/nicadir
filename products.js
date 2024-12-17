@@ -24,7 +24,7 @@ const products = [
         name: 'Camiseta de la Virgen de Guadalupe para niños y adultos',
         price: 'Desde C$150.00',
         description: 'Camiseta de la Virgen de Guadalupe Personalizada con el nombre o apellido famliar.',
-        image: 'img/product4.webp',
+        image: 'img/product3.png',
         icon: 'fa fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tazas
         category: 'Camisetas'
