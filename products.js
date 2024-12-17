@@ -31,7 +31,7 @@ const products = [
     },
     {
         id: 'product4',
-        name: 'Camiseta Stitch Navidad 01',
+        name: 'Camiseta Personalizada Stitch Navidad 01',
         price: 'Desde C$150.00',
         description: 'Camiseta Stitch Navidad Personalizada con el nombre o apellido famliar del niño o niña.',
         image: 'img/product4.png',
