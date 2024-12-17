@@ -31,19 +31,19 @@ const products = [
     },
     {
         id: 'product4',
-        name: 'Tarjeta de Invitación de Boda',
-        price: 'Desde C$50.00',
+        name: 'Camiseta Stitch Navidad 01',
+        price: 'Desde C$150.00',
         description: 'Hermosa tarjeta de invitación para bodas, totalmente personalizable con tus detalles.',
-        image: 'img/product1.webp',
+        image: 'img/product4.webp',
         icon: 'fas fa-envelope',
         sizes: [], // No aplica para tarjetas
         category: 'Tarjetas'
     },
     {
         id: 'product5',
-        name: 'Camiseta de Conjunto Familiar. I LOVE MY FAMILY',
+        name: 'Conjunto Familiar. I LOVE MY FAMILY',
         price: 'Desde C$150.00',
-        description: 'Camiseta Personalizada I LOVE MY FAMILY con el nombre o apellido famliar.',
+        description: 'Camiseta de Conjunto Familiar  Personalizada I LOVE MY FAMILY con el nombre o apellido famliar.',
         image: 'img/product5.png',
         icon: 'fas fa-tshirt',
         sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para bolsas
