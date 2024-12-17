@@ -33,10 +33,10 @@ const products = [
         id: 'product4',
         name: 'Camiseta Stitch Navidad 01',
         price: 'Desde C$150.00',
-        description: 'Hermosa tarjeta de invitación para bodas, totalmente personalizable con tus detalles.',
-        image: 'img/product4.webp',
-        icon: 'fas fa-envelope',
-        sizes: [], // No aplica para tarjetas
+        description: 'Camiseta Stitch Navidad Personalizada con el nombre o apellido famliar del niño o niña.',
+        image: 'img/product4.png',
+        icon: 'fas fa-tshirt',
+        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tarjetas
         category: 'Tarjetas'
     },
     {
