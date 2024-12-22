@@ -3,7 +3,7 @@
 // Simulated product data (could be fetched from an API or database)
 const products = [
     { id: 1, name: "Camiseta de la Virgen María", price: "$29.99", image: "camiseta_virgen_maria.png", link: "product1.html" },
-    { id: 2, name: "Product 2", price: "$39.99", image: "product2.png", link: "product2.html" },
+    { id: 2, name: "Product 2", price: "$39.99", image: "camiseta_sonic_navidad.png", link: "product2.html" },
     { id: 3, name: "Product 3", price: "$49.99", image: "product3.png", link: "product3.html" },
     { id: 4, name: "Product 4", price: "$59.99", image: "product4.jpg", link: "product4.html" },
     { id: 5, name: "Product 5", price: "$69.99", image: "product5.jpg", link: "product5.html" },
