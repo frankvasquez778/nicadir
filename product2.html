@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            .product-image img {
+                max-width: 50%;
+            }
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DA851;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Logo</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#shop">Shop</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="cart">
+                    <a href="#">Cart (0)</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-wrapper">
+                <div class="product-image">
+                    <img src="product2.png" alt="Product 1">
+                </div>
+                <div class="product-info">
+                    <h1>Product 2</h1>
+                    <p class="price">$29.99</p>
+                    <p class="description">This is a detailed description of Product 1. It highlights the features, benefits, and other relevant details about the product.</p>
+                    <button class="btn-primary">Add to Cart</button>
+                    <a href="https://wa.me/50589073669?text=Hello,%20I%20would%20like%20more%20information%20about%20Product%201" class="btn-whatsapp">Ask on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Anto Shop. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

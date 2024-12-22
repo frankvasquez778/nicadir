@@ -1,62 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anto Template Clone</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Logo</a>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="cart">
-                    <a href="#">Cart (0)</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+// scripts.js
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Welcome to Anto Shop</h1>
-            <p>Your one-stop solution for all your shopping needs.</p>
-            <a href="#shop" class="btn-primary">Shop Now</a>
-        </div>
-    </section>
+// Simulated product data (could be fetched from an API or database)
+const products = [
+    { id: 1, name: "Camiseta de la Virgen María", price: "$29.99", image: "camiseta_virgen_maria.png", link: "product1.html" },
+    { id: 2, name: "Product 2", price: "$39.99", image: "product2.png", link: "product2.html" },
+    { id: 3, name: "Product 3", price: "$49.99", image: "product3.png", link: "product3.html" },
+    { id: 4, name: "Product 4", price: "$59.99", image: "product4.jpg", link: "product4.html" },
+    { id: 5, name: "Product 5", price: "$69.99", image: "product5.jpg", link: "product5.html" },
+    { id: 6, name: "Product 6", price: "$79.99", image: "product6.jpg", link: "product6.html" },
+];
 
-    <!-- Featured Products Section -->
-    <section id="shop" class="featured-products">
-        <div class="container">
-            <h2>Featured Products</h2>
-            <div class="product-grid"></div>
-            <div class="pagination"></div>
-        </div>
-    </section>
+const itemsPerPage = 3;
+let currentPage = 1;
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are a team dedicated to bringing you the best online shopping experience.</p>
-        </div>
-    </section>
+function renderProducts(page) {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const productGrid = document.querySelector(".product-grid");
+    productGrid.innerHTML = "";
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Anto Shop. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+    products.slice(startIndex, endIndex).forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.price}</p>
+            <a href="${product.link}" class="btn-primary">View Product</a>
+        `;
+        productGrid.appendChild(productCard);
+    });
+
+    updatePaginationControls();
+}
+
+function updatePaginationControls() {
+    const totalPages = Math.ceil(products.length / itemsPerPage);
+    const pagination = document.querySelector(".pagination");
+    pagination.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageLink = document.createElement("a");
+        pageLink.href = "#";
+        pageLink.textContent = i;
+        pageLink.classList.add("pagination-link");
+        if (i === currentPage) pageLink.classList.add("active");
+
+        pageLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            currentPage = i;
+            renderProducts(currentPage);
+        });
+
+        pagination.appendChild(pageLink);
+    }
+}
+
+// Initialize the product grid on page load
+window.addEventListener("DOMContentLoaded", () => {
+    renderProducts(currentPage);
+});

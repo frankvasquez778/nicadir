@@ -1,72 +1,99 @@
 const products = [
     {
         id: 'product1',
-        name: 'Camiseta de la Virgen María Nicaragua',
-        price: 'Desde C$150.00',
-        description: 'Camiseta de la Virgen María para la Purísima en Nicaragua. Se le puede agregar el nombre familiar en la parte trasera de la camisa.',
-        image: 'img/product1.webp',
-        icon: 'fas fa-tshirt',
-        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'],
-        category: 'Camisetas'
+        name: 'Camisa Personalizada',
+        price: 'Desde $15.00',
+        description: 'Camisas únicas con diseños personalizados, perfectas para cualquier ocasión.',
+        image: 'images/product1.jpg',
+        icon: 'fas fa-tshirt'
     },
     {
         id: 'product2',
-        name: 'Camisetas Navideñas de Sonic para niños',
-        price: 'Desde C$140.00',
-        description: 'Camiseta navideña de Sonic para niños desde 0 meses a talla XL',
-        image: 'img/product2.webp',
-        icon: 'fas fa-tshirt',
-        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'],
-        category: 'Camisetas'
+        name: 'Taza Sublimada',
+        price: 'Desde $8.00',
+        description: 'Tazas personalizadas con fotos y diseños únicos.',
+        image: 'images/product2.jpg',
+        icon: 'fas fa-mug-hot'
     },
     {
         id: 'product3',
-        name: 'Camiseta de la Virgen de Guadalupe para niños y adultos',
-        price: 'Desde C$150.00',
-        description: 'Camiseta de la Virgen de Guadalupe Personalizada con el nombre o apellido famliar.',
-        image: 'img/product3.png',
-        icon: 'fa fa-tshirt',
-        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tazas
-        category: 'Camisetas'
+        name: 'Cojín Decorativo',
+        price: 'Desde $12.00',
+        description: 'Cojines decorativos sublimados, ideales para regalos.',
+        image: 'images/product3.jpg',
+        icon: 'fas fa-couch'
     },
     {
         id: 'product4',
-        name: 'Camiseta Personalizada Stitch Navidad 01',
-        price: 'Desde C$150.00',
-        description: 'Camiseta Stitch Navidad Personalizada con el nombre o apellido famliar del niño o niña.',
-        image: 'img/product4.png',
-        icon: 'fas fa-tshirt',
-        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para tarjetas
-        category: 'Tarjetas'
+        name: 'Bolso Ecológico',
+        price: 'Desde $10.00',
+        description: 'Bolsos ecológicos sublimados, prácticos y amigables con el medio ambiente.',
+        image: 'images/product4.jpg',
+        icon: 'fas fa-shopping-bag'
     },
     {
         id: 'product5',
-        name: 'Conjunto Familiar. I LOVE MY FAMILY',
-        price: 'Desde C$150.00',
-        description: 'Camiseta de Conjunto Familiar  Personalizada I LOVE MY FAMILY con el nombre o apellido famliar.',
-        image: 'img/product5.png',
-        icon: 'fas fa-tshirt',
-        sizes: ['2','4','6','8','10','12','14','16','18','S', 'M', 'L', 'XL'], // No aplica para bolsas
-        category: 'Camisetas'
+        name: 'Llaveros Personalizados',
+        price: 'Desde $5.00',
+        description: 'Llaveros personalizados con diseños únicos para regalar.',
+        image: 'images/product5.jpg',
+        icon: 'fas fa-key'
     },
     {
         id: 'product6',
-        name: 'Llavero Personalizado con Nombre',
-        price: 'Desde C$40.00',
-        description: 'Llavero acrílico con el nombre o diseño que elijas. Un detalle único y especial.',
-        image: 'img/product6.png',
-        icon: 'fas fa-key',
-        sizes: [], // No aplica para llaveros
-        category: 'Llaveros'
+        name: 'Botellas Personalizadas',
+        price: 'Desde $18.00',
+        description: 'Botellas de agua con diseños personalizados, perfectas para el gimnasio.',
+        image: 'images/product6.jpg',
+        icon: 'fas fa-bottle-water'
     },
-	{
-        id: 'product2',
-        name: 'Camisetas Navideñas de Sonic para niños',
-        price: 'Desde C$140.00',
-        description: 'Camiseta navideña de Sonic para niños desde 0 meses a talla L',
-        image: 'img/product2.png',
-        icon: 'fas fa-tshirt',
-        sizes: ['0 meses', '3 meses', '6 meses', 'L'],
-        category: 'Camisetas'
+    {
+        id: 'product7',
+        name: 'Mousepad Sublimado',
+        price: 'Desde $7.00',
+        description: 'Mousepads personalizados para oficina o videojuegos.',
+        image: 'images/product7.jpg',
+        icon: 'fas fa-mouse-pointer'
+    },
+    {
+        id: 'product8',
+        name: 'Gorra Personalizada',
+        price: 'Desde $12.00',
+        description: 'Gorras sublimadas con diseños únicos para eventos.',
+        image: 'images/product8.jpg',
+        icon: 'fas fa-hat-cowboy'
+    },
+    {
+        id: 'product9',
+        name: 'Poster Decorativo',
+        price: 'Desde $20.00',
+        description: 'Posters sublimados para decoración de interiores.',
+        image: 'images/product9.jpg',
+        icon: 'fas fa-image'
+    },
+    {
+        id: 'product10',
+        name: 'Delantal Personalizado',
+        price: 'Desde $15.00',
+        description: 'Delantales sublimados para chefs o cocineros aficionados.',
+        image: 'images/product10.jpg',
+        icon: 'fas fa-utensils'
+    },
+    {
+        id: 'product11',
+        name: 'Fundas para Celulares',
+        price: 'Desde $10.00',
+        description: 'Fundas para celulares con diseños personalizados únicos.',
+        image: 'images/product11.jpg',
+        icon: 'fas fa-mobile-alt'
+    },
+    {
+        id: 'product12',
+        name: 'Toallas Personalizadas',
+        price: 'Desde $25.00',
+        description: 'Toallas sublimadas con diseños exclusivos.',
+        image: 'images/product12.jpg',
+        icon: 'fas fa-towel'
     }
+    // Agrega más productos según sea necesario
 ];
