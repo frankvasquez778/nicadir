@@ -26,7 +26,7 @@ function renderProducts(page) {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.price}</p>
-            <a href="${product.link}" class="btn-primary">View Product</a>
+            <a href="${product.link}" class="btn-primary">Ver Producto</a>
         `;
         productGrid.appendChild(productCard);
     });
