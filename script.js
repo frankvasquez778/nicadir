@@ -4,7 +4,7 @@
 const products = [
     { id: 1, name: "Camiseta de la Virgen María", price: "$29.99", image: "camiseta_virgen_maria.png", link: "product1.html" },
     { id: 2, name: "Sonic Navidad", price: "$39.99", image: "camiseta_sonic_navidad.png", link: "product2.html" },
-    { id: 3, name: "Stitch Navidad 01", price: "$49.99", image: "product3.png", link: "product3.html" },
+    { id: 3, name: "Stitch Navidad 01", price: "$49.99", image: "camiseta_stitch_navidad.png", link: "product3.html" },
     { id: 4, name: "Product 4", price: "$59.99", image: "product4.jpg", link: "product4.html" },
     { id: 5, name: "Product 5", price: "$69.99", image: "product5.jpg", link: "product5.html" },
     { id: 6, name: "Product 6", price: "$79.99", image: "product6.jpg", link: "product6.html" },
