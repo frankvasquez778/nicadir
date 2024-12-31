@@ -65,6 +65,7 @@ export async function displayCamisas(page = 1, itemsPerPage = 15) {
                 const objectId = event.target.closest('button').getAttribute('data-id');
                 await deleteCamisa(objectId);
                 displayCamisas(page, itemsPerPage); // Refrescar la tabla
+                displayResumen(); // Refrescar el resumen
             });
         });
 
@@ -80,6 +81,54 @@ export async function displayCamisas(page = 1, itemsPerPage = 15) {
         }
     } catch (error) {
         console.error('Error al mostrar camisas:', error);
+    }
+}
+
+// Mostrar resumen de camisas
+export async function displayResumen() {
+    const resumenTableBody = document.querySelector('#resumenTable tbody');
+
+    if (!resumenTableBody) {
+        console.error('El contenedor de resumen no existe.');
+        return;
+    }
+
+    resumenTableBody.innerHTML = ""; // Limpiar el contenido del resumen
+
+    try {
+        const camisas = await fetchCamisas();
+
+        // Agrupar por Tipo, Talla, Color y Material
+        const resumenMap = new Map();
+
+        camisas.forEach(camisa => {
+            const key = `${camisa.get("tipo")}-${camisa.get("talla")}-${camisa.get("color")}-${camisa.get("material")}`;
+            if (!resumenMap.has(key)) {
+                resumenMap.set(key, {
+                    tipo: camisa.get("tipo"),
+                    talla: camisa.get("talla"),
+                    color: camisa.get("color"),
+                    material: camisa.get("material"),
+                    cantidad: 0
+                });
+            }
+            resumenMap.get(key).cantidad += 1;
+        });
+
+        // Llenar la tabla de resumen
+        resumenMap.forEach(resumen => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${resumen.tipo}</td>
+                <td>${resumen.talla}</td>
+                <td>${resumen.color}</td>
+                <td>${resumen.material}</td>
+                <td>${resumen.cantidad}</td>
+            `;
+            resumenTableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error al mostrar el resumen:', error);
     }
 }
 
@@ -102,6 +151,7 @@ export async function handleCamisaForm(event) {
         await createCamisa(tipo, talla, color, material, precio);
         document.getElementById('camisaModal').classList.add('hidden'); // Cerrar el modal
         displayCamisas(); // Refrescar la tabla
+        displayResumen(); // Actualizar el resumen
     } catch (error) {
         console.error('Error al manejar el formulario de camisas:', error);
     }
@@ -110,6 +160,7 @@ export async function handleCamisaForm(event) {
 // Inicialización
 window.addEventListener('DOMContentLoaded', () => {
     displayCamisas();
+    displayResumen();
 
     document.getElementById('camisaForm').addEventListener('submit', handleCamisaForm);
 });
