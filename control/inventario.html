@@ -50,10 +50,7 @@
         <section id="camisasSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
             <h2 class="text-lg font-semibold mb-4">Inventario de Camisas</h2>
             <button id="openCamisaModal" class="bg-blue-600 text-white px-4 py-2 rounded-md">Agregar Camisa</button>
-            
-        </section>
-
-    <div class="overflow-x-auto">
+            <div class="overflow-x-auto">
                 <table id="camisasTable" class="mt-6">
                     <thead>
                         <tr>
@@ -73,6 +70,28 @@
                     <!-- Botones de paginación se generarán dinámicamente -->
                 </div>
             </div>
+        </section>
+
+        <!-- Resumen de Camisas -->
+        <section id="resumenSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-lg font-semibold mb-4">Resumen de Inventario</h2>
+            <div class="overflow-x-auto">
+                <table id="resumenTable" class="mt-6">
+                    <thead>
+                        <tr>
+                            <th class="py-2 px-4">Tipo</th>
+                            <th class="py-2 px-4">Talla</th>
+                            <th class="py-2 px-4">Color</th>
+                            <th class="py-2 px-4">Material</th>
+                            <th class="py-2 px-4">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se llenará el resumen dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <!-- Modal para registro de camisas -->
