@@ -6,7 +6,7 @@
     <title>Inventario - Camisas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://cdn.jsdelivr.net/npm/parse/dist/parse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parse/dist/parse.min.js"></script>
     <style>
         /* Responsividad adicional */
         @media (max-width: 768px) {
@@ -50,10 +50,7 @@
         <section id="camisasSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
             <h2 class="text-lg font-semibold mb-4">Inventario de Camisas</h2>
             <button id="openCamisaModal" class="bg-blue-600 text-white px-4 py-2 rounded-md">Agregar Camisa</button>
-            
-        </section>
-
-	    <div class="overflow-x-auto">
+            <div class="overflow-x-auto">
                 <table id="camisasTable" class="mt-6">
                     <thead>
                         <tr>
@@ -69,7 +66,11 @@
                         <!-- Aquí se llenarán los datos dinámicamente -->
                     </tbody>
                 </table>
+                <div id="pagination" class="flex justify-center mt-4">
+                    <!-- Botones de paginación se generarán dinámicamente -->
+                </div>
             </div>
+        </section>
     </main>
 
     <!-- Modal para registro de camisas -->
