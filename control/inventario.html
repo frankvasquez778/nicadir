@@ -7,6 +7,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 	 <script src="https://cdn.jsdelivr.net/npm/parse/dist/parse.min.js"></script>
+    <style>
+        /* Responsividad adicional */
+        @media (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Encabezado -->
@@ -20,24 +30,24 @@
         <section id="camisasSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
             <h2 class="text-lg font-semibold mb-4">Inventario de Camisas</h2>
             <button id="openCamisaModal" class="bg-blue-600 text-white px-4 py-2 rounded-md">Agregar Camisa</button>
-            
+            <div class="overflow-x-auto">
+                <table id="camisasTable" class="min-w-full bg-white rounded-xl mt-6">
+                    <thead>
+                        <tr class="text-left border-b">
+                            <th class="py-2 px-4">Tipo</th>
+                            <th class="py-2 px-4">Talla</th>
+                            <th class="py-2 px-4">Color</th>
+                            <th class="py-2 px-4">Material</th>
+                            <th class="py-2 px-4">Precio</th>
+                            <th class="py-2 px-4">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se llenarán los datos dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
         </section>
-		
-		<table id="camisasTable" class="min-w-full bg-white rounded-xl mt-6">
-                <thead>
-                    <tr class="text-left border-b">
-                        <th class="py-2 px-4">Tipo</th>
-                        <th class="py-2 px-4">Talla</th>
-                        <th class="py-2 px-4">Color</th>
-                        <th class="py-2 px-4">Material</th>
-                        <th class="py-2 px-4">Precio</th>
-                        <th class="py-2 px-4">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Aquí se llenarán los datos dinámicamente -->
-                </tbody>
-            </table>
     </main>
 
     <!-- Modal para registro de camisas -->
@@ -48,14 +58,33 @@
                 <div class="mb-4">
                     <label for="camisaTipo" class="block text-sm font-medium">Tipo de Camisa</label>
                     <select id="camisaTipo" class="w-full p-2 border rounded-md">
-                        <option value="Unisex">Unisex</option>
-                        <option value="Hombre">Hombre</option>
-                        <option value="Mujer">Mujer</option>
+                        <option value="Cuello Redondo">Cuello Redondo </option>
+                        <option value="Tacto Algodón">Tacto Algodón</option>
+                        <option value="Tacto Algodón Mujer">Tacto Algodón Mujer</option>
+						<option value="Polo">Polo</option>
                     </select>
                 </div>
                 <div class="mb-4">
                     <label for="camisaTalla" class="block text-sm font-medium">Talla</label>
-                    <input type="text" id="camisaTalla" class="w-full p-2 border rounded-md" placeholder="Talla (S, M, L, XL)" required />
+                    <select id="camisaTalla" class="w-full p-2 border rounded-md">
+                        <optgroup label="Númericas">
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                        </optgroup>
+                        <optgroup label="Letras">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </optgroup>
+                    </select>
                 </div>
                 <div class="mb-4">
                     <label for="camisaColor" class="block text-sm font-medium">Color</label>
@@ -100,3 +129,4 @@
     </script>
 </body>
 </html>
+
