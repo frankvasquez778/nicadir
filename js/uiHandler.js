@@ -109,7 +109,7 @@ export async function displayBalance() {
 
 // Mostrar y ocultar secciones
 export function toggleSection(sectionId) {
-    const sections = ["balanceSection", "incomesSection", "expensesSection", "categoriesSection"];
+    const sections = ["balanceSection", "incomesSection", "expensesSection"];
     sections.forEach(id => {
         const section = document.getElementById(id);
         if (section) {
