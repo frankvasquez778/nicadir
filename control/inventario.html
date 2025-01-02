@@ -40,20 +40,16 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Encabezado -->
-    <header class="bg-white shadow-md p-4 fixed top-0 w-full z-10">
-        <h1 class="text-2xl font-bold text-center text-blue-600">Inventario de Camisas</h1>
+    <header class="bg-white shadow-md p-4 fixed top-0 w-full z-10 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">Inventario de Camisas</h1>
+        <button id="logoutButton" class="bg-red-500 text-white px-4 py-2 rounded-md hidden">Cerrar Sesión</button>
     </header>
 
     <!-- Contenedor principal -->
-    <main id="mainContent" class="mt-32 px-4 md:px-8">
-        <!-- Registro de Camisas -->
-        <section id="camisasSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h2 class="text-lg font-semibold mb-4">Inventario de Camisas</h2>
-            <button id="openCamisaModal" class="bg-blue-600 text-white px-4 py-2 rounded-md">Agregar Camisa</button>
-            
-        </section>
-
-        <!-- Resumen de Camisas -->
+    <main id="mainContent" class="mt-32 px-4 md:px-8 hidden">
+	
+	
+	 <!-- Resumen de Camisas -->
         <section id="resumenSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
             <h2 class="text-lg font-semibold mb-4">Resumen de Inventario</h2>
             <div class="overflow-x-auto">
@@ -73,8 +69,18 @@
                 </table>
             </div>
         </section>
-
-        <div class="overflow-x-auto">
+	
+	
+	
+	
+	
+	
+	
+        <!-- Registro de Camisas -->
+        <section id="camisasSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <h2 class="text-lg font-semibold mb-4">Inventario de Camisas</h2>
+            <button id="openCamisaModal" class="bg-blue-600 text-white px-4 py-2 rounded-md">Agregar Camisa</button>
+            <div class="overflow-x-auto">
                 <table id="camisasTable" class="mt-6">
                     <thead>
                         <tr>
@@ -94,85 +100,44 @@
                     <!-- Botones de paginación se generarán dinámicamente -->
                 </div>
             </div>
+        </section>
+
+       
     </main>
 
-    <!-- Modal para registro de camisas -->
-    <div id="camisaModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-20">
-        <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-md">
-            <h2 class="text-lg font-semibold mb-4">Registrar Camisa</h2>
-            <form id="camisaForm">
+    <!-- Modal de Autenticación -->
+    <div id="authModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-20">
+        <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-sm">
+            <h2 class="text-lg font-semibold mb-4" id="authTitle">Iniciar Sesión</h2>
+            <form id="authForm">
                 <div class="mb-4">
-                    <label for="camisaTipo" class="block text-sm font-medium">Tipo de Camisa</label>
-                    <select id="camisaTipo" class="w-full p-2 border rounded-md">
-                        <option value="Unisex">Unisex</option>
-                        <option value="Mujer">Mujer</option>
-                        <option value="Polo">Polo</option>
-                        <option value="Waffit">Waffit</option>
-                    </select>
+                    <label for="username" class="block text-sm font-medium">Usuario</label>
+                    <input type="text" id="username" class="w-full p-2 border rounded-md" placeholder="Nombre de usuario" required />
                 </div>
                 <div class="mb-4">
-                    <label for="camisaTalla" class="block text-sm font-medium">Talla</label>
-                    <select id="camisaTalla" class="w-full p-2 border rounded-md">
-                        <optgroup label="Númericas">
-                            <option value="0">0</option>
-                            <option value="2">2</option>
-                            <option value="4">4</option>
-                            <option value="6">6</option>
-                            <option value="8">8</option>
-                            <option value="10">10</option>
-                            <option value="12">12</option>
-                            <option value="14">14</option>
-                            <option value="16">16</option>
-                            <option value="18">18</option>
-                        </optgroup>
-                        <optgroup label="Letras">
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="camisaColor" class="block text-sm font-medium">Color</label>
-                    <select id="camisaColor" class="w-full p-2 border rounded-md">
-                        <option value="blanco">Blanco</option>
-                        <option value="negro">Negro</option>
-                        <option value="rojo">Rojo</option>
-                        <option value="verde">Verde</option>
-                        <option value="azul">Azul</option>
-                        <option value="amarillo">Amarillo</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="camisaMaterial" class="block text-sm font-medium">Material</label>
-                    <select id="camisaMaterial" class="w-full p-2 border rounded-md">
-                        <option value="tacto algodon">Tacto Algodón</option>
-                        <option value="algodon">Algodón</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="camisaPrecio" class="block text-sm font-medium">Precio</label>
-                    <input type="number" id="camisaPrecio" class="w-full p-2 border rounded-md" placeholder="Precio" required />
+                    <label for="password" class="block text-sm font-medium">Contraseña</label>
+                    <input type="password" id="password" class="w-full p-2 border rounded-md" placeholder="Contraseña" required />
                 </div>
                 <div class="flex justify-end">
-                    <button type="button" id="closeCamisaModal" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md mr-2">Cancelar</button>
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Registrar</button>
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Entrar</button>
                 </div>
             </form>
         </div>
     </div>
-    <br><br>
 
+    <script type="module" src="./js/auth.js"></script>
     <script type="module" src="./js/camisas.js"></script>
     <script>
-        // Abrir y cerrar modal
-        document.getElementById('openCamisaModal').addEventListener('click', () => {
-            document.getElementById('camisaModal').classList.remove('hidden');
-        });
+        // Mostrar/ocultar contenido basado en autenticación
+        const mainContent = document.getElementById('mainContent');
+        const logoutButton = document.getElementById('logoutButton');
 
-        document.getElementById('closeCamisaModal').addEventListener('click', () => {
-            document.getElementById('camisaModal').classList.add('hidden');
+        Parse.User.current() ? mainContent.classList.remove('hidden') : mainContent.classList.add('hidden');
+        Parse.User.current() ? logoutButton.classList.remove('hidden') : logoutButton.classList.add('hidden');
+
+        logoutButton.addEventListener('click', async () => {
+            await Parse.User.logOut();
+            location.reload();
         });
     </script>
 </body>
