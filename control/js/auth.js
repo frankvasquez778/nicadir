@@ -1,6 +1,5 @@
 // scripts/auth.js
-Parse.initialize("YOUR_APP_ID", "YOUR_JS_KEY"); // Reemplaza con tus credenciales de Parse
-Parse.serverURL = "https://parseapi.back4app.com/";
+import Parse from './parseConfig.js';
 
 // Manejar autenticación
 const authForm = document.getElementById("authForm");
@@ -22,21 +21,8 @@ async function handleAuth(event) {
         logoutButton.classList.remove("hidden");
         console.log("Usuario autenticado:", Parse.User.current().getUsername());
     } catch (error) {
-        // Si el usuario no existe, intentar registrarlo
-        try {
-            const user = new Parse.User();
-            user.set("username", username);
-            user.set("password", password);
-
-            await user.signUp();
-            authModal.classList.add("hidden");
-            mainContent.classList.remove("hidden");
-            logoutButton.classList.remove("hidden");
-            console.log("Usuario registrado:", Parse.User.current().getUsername());
-        } catch (signUpError) {
-            console.error("Error al autenticar al usuario:", signUpError);
-            alert("Error al iniciar sesión o registrarse. Verifica tus credenciales.");
-        }
+        console.error("Error al autenticar al usuario:", error);
+        alert("Error al iniciar sesión. Verifica tus credenciales.");
     }
 }
 
