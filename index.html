@@ -3,139 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEF NICARAGUA</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/parse/dist/parse.min.js"></script>
+    <title>Estudio Creativo DEF Nicaragua</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-    <!-- Encabezado -->
-    <header class="bg-white shadow-md p-4 fixed top-0 w-full z-10">
-        <h1 class="text-2xl font-bold text-center text-blue-600">DEF NICARAGUA</h1>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><img src="logo.png" alt="Estudio Creativo DEF Nicaragua" style="width: 100px; height: auto;"></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#shop">Tienda</a></li>
+                    <li><a href="control/index.html">Admin</a></li>
+                </ul>
+                
+            </nav>
+        </div>
     </header>
 
-    <!-- Navegación -->
-    <nav class="bg-white shadow-md p-4 fixed top-16 w-full z-10 flex justify-around border-t border-gray-200">
-        <button id="viewBalance" class="text-blue-600 font-semibold flex flex-col items-center">
-            <i class="fas fa-chart-line text-lg"></i>
-            <span class="text-sm">Balance</span>
-        </button>
-        <button id="viewIncomes" class="text-blue-600 font-semibold flex flex-col items-center">
-            <i class="fas fa-money-bill-wave text-lg"></i>
-            <span class="text-sm">Ingresos</span>
-        </button>
-        <button id="viewExpenses" class="text-blue-600 font-semibold flex flex-col items-center">
-            <i class="fas fa-shopping-cart text-lg"></i>
-            <span class="text-sm">Gastos</span>
-        </button>
-        <button id="viewInventory" onclick="location.href='inventario.html'" class="text-blue-600 font-semibold flex flex-col items-center">
-            <i class="fas fa-boxes text-lg"></i>
-            <span class="text-sm">Inventario</span>
-        </button>
-    </nav>
-
-    <!-- Contenedor principal -->
-    <main id="mainContent" class="mt-32 px-4 md:px-8">
-        <!-- Resumen de balance -->
-        <section id="balanceSection" class="bg-white rounded-xl shadow-md p-6 mb-6">
-            <h2 class="text-lg font-semibold mb-2">Resumen del Balance</h2>
-            <div class="flex flex-col sm:flex-row sm:justify-between">
-                <p class="text-3xl font-bold balance-value">+$0.00</p>
-                <div class="text-sm text-gray-600 mt-4 sm:mt-0">
-                    <p>Ingresos totales: <span class="income-total">+$0.00</span></p>
-                    <p>Gastos totales: <span class="expense-total">-$0.00</span></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lista de ingresos -->
-        <section id="incomesSection" class="hidden">
-            <h2 class="text-lg font-semibold mb-4">Ingresos</h2>
-            <div class="bg-white rounded-xl shadow-md p-4">
-                <table id="incomesTable" class="min-w-full bg-white rounded-xl">
-                    <thead>
-                        <tr class="text-left border-b">
-                            <th class="py-2 px-4">Monto</th>
-                            <th class="py-2 px-4">Categoría</th>
-                            <th class="py-2 px-4">Descripción</th>
-                            <th class="py-2 px-4">Fecha</th>
-                            <th class="py-2 px-4">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí se llenarán los ingresos dinámicamente -->
-                    </tbody>
-                </table>
-                <div id="incomesTablePagination" class="mt-4 flex justify-center">
-                    <!-- Aquí se agregarán los botones de paginación dinámicamente -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Lista de gastos -->
-        <section id="expensesSection" class="hidden">
-            <h2 class="text-lg font-semibold mb-4">Gastos</h2>
-            <div class="bg-white rounded-xl shadow-md p-4">
-                <table id="expensesTable" class="min-w-full bg-white rounded-xl">
-                    <thead>
-                        <tr class="text-left border-b">
-                            <th class="py-2 px-4">Monto</th>
-                            <th class="py-2 px-4">Categoría</th>
-                            <th class="py-2 px-4">Descripción</th>
-                            <th class="py-2 px-4">Fecha</th>
-                            <th class="py-2 px-4">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí se llenarán los gastos dinámicamente -->
-                    </tbody>
-                </table>
-                <div id="expensesTablePagination" class="mt-4 flex justify-center">
-                    <!-- Aquí se agregarán los botones de paginación dinámicamente -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Botón flotante -->
-    <button
-        id="addTransactionBtn"
-        class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-md hover:bg-blue-700 focus:outline-none">
-        <i class="fas fa-plus"></i>
-    </button>
-
-    <!-- Formulario emergente para agregar transacciones -->
-    <div id="transactionForm" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-20">
-        <div class="bg-white rounded-xl shadow-md p-6 w-full max-w-md">
-            <h2 class="text-lg font-semibold mb-4">Agregar Transacción</h2>
-            <form>
-                <div class="mb-4">
-                    <label for="type" class="block text-sm font-medium">Tipo</label>
-                    <select id="type" class="w-full p-2 border rounded-md">
-                        <option value="Ingreso">Ingreso</option>
-                        <option value="Gasto">Gasto</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <label for="amount" class="block text-sm font-medium">Monto</label>
-                    <input type="number" id="amount" class="w-full p-2 border rounded-md" required />
-                </div>
-                <div class="mb-4">
-                    <label for="category" class="block text-sm font-medium">Categoría</label>
-                    <input type="text" id="category" class="w-full p-2 border rounded-md" required />
-                </div>
-                <div class="mb-4">
-                    <label for="description" class="block text-sm font-medium">Descripción (Opcional)</label>
-                    <input type="text" id="description" class="w-full p-2 border rounded-md" />
-                </div>
-                <div class="flex justify-end">
-                    <button type="button" id="closeFormBtn" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md mr-2">Cancelar</button>
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Guardar</button>
-                </div>
-            </form>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Bienvenidos a Estudio Creativo DEF Nicaragua</h1>
+            <p>Especialistas en sublimación de camisas, tazas, llaveros y más. Diseñamos tarjetas de invitación personalizadas para cumpleaños, bodas y eventos especiales. En Estudio Creativo DEF Nicaragua, damos vida a tus ideas con calidad y profesionalismo.</p>
+            <a href="#shop" class="btn-primary">Explorar Tienda</a>
         </div>
-    </div>
+    </section>
 
-    <script type="module" src="./js/main.js"></script>
+    <!-- Featured Products Section -->
+    <section id="shop" class="featured-products">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            <div class="product-grid">
+                <!-- Sonic Navidad -->
+                <div class="product-card">
+                    <img src="camiseta_sonic_navidad.png" alt="Camiseta Sonic Navidad">
+                    <h3>Camiseta Sonic Navidad</h3>
+                    <p class="price">$21.99</p>
+                    <a href="camiseta_sonic_navidad.html" class="btn-primary">Ver Producto</a>
+                </div>
+
+                <!-- Virgen María -->
+                <div class="product-card">
+                    <img src="camiseta_virgen_maria.png" alt="Camiseta Virgen María">
+                    <h3>Camiseta Virgen María</h3>
+                    <p class="price">$19.99</p>
+                    <a href="camiseta_virgen_maria.html" class="btn-primary">Ver Producto</a>
+                </div>
+            </div>
+            <div class="pagination"></div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Estudio Creativo DEF Nicaragua. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
