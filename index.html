@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sublimación en Nicaragua: personalización de productos para bodas, cumpleaños y eventos especiales. Calidad garantizada por Estudio Creativo DEF Nicaragua.">
-    <meta name="keywords" content="sublimación en Nicaragua, personalización de productos, camisetas personalizadas, regalos únicos, eventos especiales, Estudio Creativo DEF Nicaragua">
+    <meta name="description" content="Camiseta de Stitch Navidad, perfecta para festivales y celebraciones navideñas. Disponible en tallas para niños y adultos. Personalizada por Estudio Creativo DEF Nicaragua, expertos en sublimación de textiles y más.">
+    <meta name="keywords" content="Camiseta Stitch Navidad, festivales navideños, camisetas niños y adultos, sublimación personalizada, Estudio Creativo DEF Nicaragua">
     <meta name="author" content="Estudio Creativo DEF Nicaragua">
-    <title>Sublimación en Nicaragua - Productos Personalizados para Eventos</title>
+    <title>Camiseta Stitch Navidad - Festivales Navideños</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -23,7 +22,7 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .header, .footer {
+        .header {
             background-color: #fff;
             border-bottom: 1px solid #ddd;
             padding: 10px 20px;
@@ -33,10 +32,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        .logo img {
-            width: 120px;
-            height: auto;
         }
         .nav-links {
             list-style: none;
@@ -48,29 +43,77 @@
             color: #333;
             font-weight: 500;
         }
-        .main-banner {
+        .product-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            padding: 50px 20px;
-            background-color: #f0f8ff;
+            margin: 40px 0;
         }
-        .main-banner h1 {
-            font-size: 36px;
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (min-width: 1024px) {
+            .product-image img {
+                max-width: 40%;
+            }
+        }
+        .btn-primary, .btn-whatsapp {
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            margin: 10px 0;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DA851;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 25px;
             margin-bottom: 10px;
         }
-        .main-banner p {
-            font-size: 18px;
-        }
-        .services, .about, .products {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .services h2, .about h2, .products h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .about p, .products p {
+        ul li:before {
+            content: "\f058"; /* Font Awesome check icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #007bff;
             font-size: 16px;
-            line-height: 1.8;
+        }
+        .footer {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
         .footer p {
             font-size: 14px;
@@ -82,66 +125,61 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="logo.png" alt="Estudio Creativo DEF Nicaragua">
-                </a>
+                <a href="index.html" class="logo" style="display: inline-block; float: left;"><img src="logo.png" alt="Estudio Creativo DEF Nicaragua" style="width: 100px; height: auto;"></a>
                 <ul class="nav-links">
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="index.html#shop">Tienda</a></li>
+                    
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="banner" class="main-banner">
-        <div class="container">
-            <h1>Sublimación en Nicaragua</h1>
-            <p>Transforma tus ideas en productos únicos con nuestra sublimación de alta calidad. Perfecto para bodas, cumpleaños y eventos especiales.</p>
-        </div>
-    </section>
+    <main>
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-wrapper">
+                    <div class="product-image">
+                        <img src="camiseta_stitch_navidad.png" alt="Camiseta Stitch Navidad">
+                    </div>
+                    <div class="product-info">
+                        <h1>Camiseta Stitch Navidad</h1>
+                        <p class="price">$22.99</p>
+                        <p class="description">Nuestra camiseta de Stitch Navidad es perfecta para festivales y celebraciones navideñas. Confeccionada en tela de alta calidad, ofrecemos opciones en 100% algodón o 70/30 algodón stretch, asegurando comodidad y durabilidad. Este diseño vibrante con Stitch en temática navideña es ideal tanto para niños como adultos. Disponible en tallas desde niños (0-16) hasta adultos (S-XL). Personalizada por Estudio Creativo DEF Nicaragua, especialistas en sublimación de textiles y otros productos, esta prenda es la elección ideal para llevar el espíritu navideño contigo.</p>
+                        
+                        <h3>Tallas disponibles:</h3>
+                        <ul>
+                            <li><strong>Niños:</strong> 0, 2, 4, 6, 8, 10, 12, 14, 16</li>
+                            <li><strong>Adultos:</strong> S, M, L, XL</li>
+                        </ul>
 
-    <section id="productos" class="products">
-        <div class="container">
-            <h2>Nuestros Productos</h2>
-            <p>Explora nuestras opciones de personalización: camisetas, tazas, gorras, y más. Cada producto es hecho con amor y atención al detalle.</p>
-            <div id="product-list">
-                <!-- Aquí se cargarán los productos con JavaScript -->
+                        <a href="https://wa.me/50589073669?text=Hola,%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20la%20camiseta%20Stitch%20Navidad.%20Pueden%20verla%20aqui:%20https://www.tupaginaweb.com/camiseta_stitch_navidad.html" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Pedir información en WhatsApp</a>
+
+                        <button class="btn-primary"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Acerca de Nosotros</h2>
-            <p>En Estudio Creativo DEF Nicaragua, nos especializamos en sublimación personalizada. Ubicados en Ocotal, Nueva Segovia, ofrecemos productos únicos que capturan momentos especiales. Desde camisetas hasta regalos personalizados, nos aseguramos de que cada pieza sea un reflejo de tu estilo y necesidades.</p>
-            <p>Con años de experiencia, somos líderes en sublimación en Nicaragua, atendiendo a eventos como bodas, cumpleaños y aniversarios. Nuestro compromiso es ofrecer calidad, creatividad y satisfacción al cliente.</p>
-        </div>
-    </section>
+        <section class="product-highlights">
+            <div class="container">
+                <h2>Características principales</h2>
+                <ul>
+                    <li>Diseño exclusivo de Stitch en temática navideña.</li>
+                    <li>Material: 100% algodón suave o tela 70/30 stretch.</li>
+                    <li>Disponible en colores navideños: rojo, azul y blanco.</li>
+                    <li>Personalización realizada por Estudio Creativo DEF Nicaragua.</li>
+                    <li>Ubicación: Ocotal, Nueva Segovia, Nicaragua.</li>
+                    <li>Perfecta para festivales navideños o uso casual.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-    <footer id="contacto" class="footer">
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Estudio Creativo DEF Nicaragua. Todos los derechos reservados. Ubicados en Ocotal, Nueva Segovia, Nicaragua.</p>
         </div>
     </footer>
-
-    <script>
-        // Simulación de carga de productos
-        const products = [
-            { name: "Camiseta Personalizada", description: "Perfecta para eventos especiales.", price: "$24.99" },
-            { name: "Taza Personalizada", description: "Un regalo único y práctico.", price: "$12.99" },
-            { name: "Gorra Sublimada", description: "Diseño exclusivo.", price: "$15.99" }
-        ];
-
-        const productList = document.getElementById("product-list");
-        products.forEach(product => {
-            const productDiv = document.createElement("div");
-            productDiv.innerHTML = `
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p><strong>${product.price}</strong></p>
-            `;
-            productList.appendChild(productDiv);
-        });
-    </script>
 </body>
 </html>
