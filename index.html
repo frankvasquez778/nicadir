@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Estudio Creativo DEF Nicaragua ofrece servicios de sublimación personalizados. Productos únicos para bodas, cumpleaños y eventos especiales.">
-    <meta name="keywords" content="sublimación en Nicaragua, personalización de productos, regalos personalizados, eventos especiales, camisetas personalizadas, Estudio Creativo DEF Nicaragua">
+    <meta name="description" content="Sublimación en Nicaragua: personalización de productos para bodas, cumpleaños y eventos especiales. Calidad garantizada por Estudio Creativo DEF Nicaragua.">
+    <meta name="keywords" content="sublimación en Nicaragua, personalización de productos, camisetas personalizadas, regalos únicos, eventos especiales, Estudio Creativo DEF Nicaragua">
     <meta name="author" content="Estudio Creativo DEF Nicaragua">
     <title>Sublimación en Nicaragua - Productos Personalizados para Eventos</title>
     <link rel="stylesheet" href="styles.css">
@@ -28,7 +28,6 @@
             border-bottom: 1px solid #ddd;
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
         .navbar {
             display: flex;
@@ -61,31 +60,15 @@
         .main-banner p {
             font-size: 18px;
         }
-        .services {
+        .services, .about, .products {
             text-align: center;
             padding: 40px 20px;
         }
-        .services h2 {
+        .services h2, .about h2, .products h2 {
             font-size: 28px;
             margin-bottom: 20px;
         }
-        .services ul {
-            list-style: none;
-            padding: 0;
-        }
-        .services ul li {
-            margin-bottom: 10px;
-        }
-        .about {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #f0f0f0;
-        }
-        .about h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .about p {
+        .about p, .products p {
             font-size: 16px;
             line-height: 1.8;
         }
@@ -103,45 +86,62 @@
                     <img src="logo.png" alt="Estudio Creativo DEF Nicaragua">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="main-banner">
+    <section id="banner" class="main-banner">
         <div class="container">
             <h1>Sublimación en Nicaragua</h1>
-            <p>Productos personalizados para bodas, cumpleaños, aniversarios y eventos especiales. Estudio Creativo DEF Nicaragua ofrece calidad y creatividad.</p>
+            <p>Transforma tus ideas en productos únicos con nuestra sublimación de alta calidad. Perfecto para bodas, cumpleaños y eventos especiales.</p>
         </div>
     </section>
 
-    <section class="services">
+    <section id="productos" class="products">
         <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <ul>
-                <li>Camisetas personalizadas con fotos y textos.</li>
-                <li>Regalos únicos para aniversarios y cumpleaños.</li>
-                <li>Personalización de productos para bodas y eventos.</li>
-                <li>Diseños exclusivos sublimados en alta calidad.</li>
-            </ul>
+            <h2>Nuestros Productos</h2>
+            <p>Explora nuestras opciones de personalización: camisetas, tazas, gorras, y más. Cada producto es hecho con amor y atención al detalle.</p>
+            <div id="product-list">
+                <!-- Aquí se cargarán los productos con JavaScript -->
+            </div>
         </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <h2>Acerca de Nosotros</h2>
-            <p>Ubicados en Ocotal, Nueva Segovia, Nicaragua, somos expertos en sublimación de productos personalizados. Ya sea para regalos únicos o eventos importantes, nuestro equipo está dedicado a crear diseños que resalten tus momentos más especiales. Utilizamos materiales de alta calidad para garantizar productos duraderos y con acabados excepcionales.</p>
-            <p>Con años de experiencia, somos la opción preferida en Nicaragua para personalizaciones de productos. Confía en nosotros para hacer realidad tus ideas creativas.</p>
+            <p>En Estudio Creativo DEF Nicaragua, nos especializamos en sublimación personalizada. Ubicados en Ocotal, Nueva Segovia, ofrecemos productos únicos que capturan momentos especiales. Desde camisetas hasta regalos personalizados, nos aseguramos de que cada pieza sea un reflejo de tu estilo y necesidades.</p>
+            <p>Con años de experiencia, somos líderes en sublimación en Nicaragua, atendiendo a eventos como bodas, cumpleaños y aniversarios. Nuestro compromiso es ofrecer calidad, creatividad y satisfacción al cliente.</p>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer id="contacto" class="footer">
         <div class="container">
             <p>&copy; 2024 Estudio Creativo DEF Nicaragua. Todos los derechos reservados. Ubicados en Ocotal, Nueva Segovia, Nicaragua.</p>
         </div>
     </footer>
+
+    <script>
+        // Simulación de carga de productos
+        const products = [
+            { name: "Camiseta Personalizada", description: "Perfecta para eventos especiales.", price: "$24.99" },
+            { name: "Taza Personalizada", description: "Un regalo único y práctico.", price: "$12.99" },
+            { name: "Gorra Sublimada", description: "Diseño exclusivo.", price: "$15.99" }
+        ];
+
+        const productList = document.getElementById("product-list");
+        products.forEach(product => {
+            const productDiv = document.createElement("div");
+            productDiv.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p><strong>${product.price}</strong></p>
+            `;
+            productList.appendChild(productDiv);
+        });
+    </script>
 </body>
 </html>
