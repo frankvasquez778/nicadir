@@ -3,64 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudio Creativo DEF Nicaragua</title>
+    <meta name="description" content="Estudio Creativo DEF Nicaragua ofrece servicios de sublimación personalizados. Productos únicos para bodas, cumpleaños y eventos especiales.">
+    <meta name="keywords" content="sublimación en Nicaragua, personalización de productos, regalos personalizados, eventos especiales, camisetas personalizadas, Estudio Creativo DEF Nicaragua">
+    <meta name="author" content="Estudio Creativo DEF Nicaragua">
+    <title>Sublimación en Nicaragua - Productos Personalizados para Eventos</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header, .footer {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .main-banner {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f0f8ff;
+        }
+        .main-banner h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .main-banner p {
+            font-size: 18px;
+        }
+        .services {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .services h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services ul li {
+            margin-bottom: 10px;
+        }
+        .about {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f0f0f0;
+        }
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .footer p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo"><img src="logo.png" alt="Estudio Creativo DEF Nicaragua" style="width: 100px; height: auto;"></a>
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Estudio Creativo DEF Nicaragua">
+                </a>
                 <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#shop">Tienda</a></li>
-                    <li><a href="control/index.html">Admin</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
-                
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="main-banner">
         <div class="container">
-            <h1>Bienvenidos a Estudio Creativo DEF Nicaragua</h1>
-            <p>Especialistas en sublimación de camisas, tazas, llaveros y más. Diseñamos tarjetas de invitación personalizadas para cumpleaños, bodas y eventos especiales. En Estudio Creativo DEF Nicaragua, damos vida a tus ideas con calidad y profesionalismo.</p>
-            <a href="#shop" class="btn-primary">Explorar Tienda</a>
+            <h1>Sublimación en Nicaragua</h1>
+            <p>Productos personalizados para bodas, cumpleaños, aniversarios y eventos especiales. Estudio Creativo DEF Nicaragua ofrece calidad y creatividad.</p>
         </div>
     </section>
 
-    <!-- Featured Products Section -->
-    <section id="shop" class="featured-products">
+    <section class="services">
         <div class="container">
-            <h2>Productos Destacados</h2>
-            <div class="product-grid">
-                <!-- Sonic Navidad -->
-                <div class="product-card">
-                    <img src="camiseta_sonic_navidad.png" alt="Camiseta Sonic Navidad">
-                    <h3>Camiseta Sonic Navidad</h3>
-                    <p class="price">$21.99</p>
-                    <a href="camiseta_sonic_navidad.html" class="btn-primary">Ver Producto</a>
-                </div>
-
-                <!-- Virgen María -->
-                <div class="product-card">
-                    <img src="camiseta_virgen_maria.png" alt="Camiseta Virgen María">
-                    <h3>Camiseta Virgen María</h3>
-                    <p class="price">$19.99</p>
-                    <a href="camiseta_virgen_maria.html" class="btn-primary">Ver Producto</a>
-                </div>
-            </div>
-            <div class="pagination"></div>
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Camisetas personalizadas con fotos y textos.</li>
+                <li>Regalos únicos para aniversarios y cumpleaños.</li>
+                <li>Personalización de productos para bodas y eventos.</li>
+                <li>Diseños exclusivos sublimados en alta calidad.</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Acerca de Nosotros</h2>
+            <p>Ubicados en Ocotal, Nueva Segovia, Nicaragua, somos expertos en sublimación de productos personalizados. Ya sea para regalos únicos o eventos importantes, nuestro equipo está dedicado a crear diseños que resalten tus momentos más especiales. Utilizamos materiales de alta calidad para garantizar productos duraderos y con acabados excepcionales.</p>
+            <p>Con años de experiencia, somos la opción preferida en Nicaragua para personalizaciones de productos. Confía en nosotros para hacer realidad tus ideas creativas.</p>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Estudio Creativo DEF Nicaragua. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Estudio Creativo DEF Nicaragua. Todos los derechos reservados. Ubicados en Ocotal, Nueva Segovia, Nicaragua.</p>
         </div>
     </footer>
 </body>
